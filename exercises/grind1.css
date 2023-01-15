@@ -1,0 +1,14 @@
+section {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 100px 1fr 100px;
+}
+.row1 {
+  background-color: pink;
+}
+.row2 {
+  background-color: lightblue;
+}
+.row3 {
+  background-color: lightgoldenrodyellow;
+}

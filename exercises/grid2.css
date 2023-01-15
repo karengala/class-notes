@@ -1,0 +1,30 @@
+section {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 40px 40px auto;
+  grid-template-columns: 80px auto;
+  grid-template-areas:
+    "header header header"
+    "navbar navbar navbar"
+    "sidebar main main";
+  margin: 0;
+}
+section p {
+  margin: 0;
+}
+.row1 {
+  background-color: pink;
+  grid-area: header;
+}
+.row2 {
+  background-color: lightblue;
+  grid-area: navbar;
+}
+.row3 {
+  background-color: lightgoldenrodyellow;
+  grid-area: sidebar;
+}
+.row4 {
+  background-color: green;
+  grid-area: main;
+}

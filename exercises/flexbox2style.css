@@ -1,0 +1,12 @@
+body section {
+  display: flex;
+  flex-direction: column;
+}
+.box1 {
+  align-items: center;
+}
+.box2 {
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
