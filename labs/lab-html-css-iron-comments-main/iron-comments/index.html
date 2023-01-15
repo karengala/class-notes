@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Iron Comments</title>
+
+    <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+  </head>
+  <body>
+    <form class="form-container">
+      <!-- Name: Email: Comment: Receive email updates? Submit -->
+
+      <!-- <h1>Band Registration Form</h1>
+            <p>Register your favorites bands</p> -->
+
+      <!--input nombre-->
+      <div class="formInputContainer">
+        <label class="formLabel" for="userName">Name:</label><br />
+        <input type="text" id="userName" />
+      </div>
+
+      <!--input email-->
+      <div id="formInputContainer">
+        <label>Email:</label><br />
+        <input type="email" id="useremail" />
+      </div>
+
+      <!-- text area -->
+
+      <div class="formInputContainer">
+        <label>Comment:</label><br />
+        <textarea name="" rows="5" cols="20" class="inputcomment"></textarea>
+      </div>
+
+      <!-- escoge genero -->
+
+      <!-- <div id="formInputContainergenero"></div>
+              <label for="favGenre">favorite Genre</label>
+              <select name="bandGenre" id="bandGenre">
+                <option value="">Select a genre</option>
+                <option value="hipHop">Hip Hop</option>
+                <option value="rock">Rock</option>
+                <option value="electronic">Electronic</option>
+              </select>
+      
+          </div> -->
+      <!-- checkbox -->
+
+      <div class="formInputContainercb">
+        <label>Recieve email updates?</label>
+        <input type="checkbox" id="checkbox" value="first-checkbox" />
+      </div>
+
+      <!-- submit -->
+      <div class="formInputContainer">
+        <input
+          type="submit"
+          class="click"
+          value="Submit"
+          onclick="alert('form submmited')"
+        />
+        <!-- <button class="click" onclick="alert('form submmited')">Submit</button> -->
+      </div>
+    </form>
+  </body>
+</html>

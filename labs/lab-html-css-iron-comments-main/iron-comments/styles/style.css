@@ -1,0 +1,56 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    padding-top: 100px;
+    width: 100vw;  
+    color: rgb(255,255,255)
+    
+
+}
+
+
+*{
+        font-family: serif;
+        font-weight: 530;
+        background-color: rgb(25, 33, 41);
+        
+}
+.form-container{
+    border: 2px solid rgb(67, 163, 230);
+    padding: 20px;
+    width: 250px;
+    margin: auto;
+
+   
+}
+input{
+background-color: white;
+border-width: 1px;
+border-radius: 2px;
+border-color:rgb(67, 163, 230) ;
+
+
+    
+}
+
+.inputcomment{
+   background-color: white;
+   border-width: 0.7px;
+   border-color: rgb(67, 163, 230);
+   border-radius: 2px;
+
+}
+
+.formInputContainercb{
+    font-style: italic;
+}
+.click{
+background-color: rgb(67, 163, 230);
+border-radius: 20px;
+border-width: 0px;
+color: white;
+font-family: sans-serif;
+font-weight: 100;
+
+}
