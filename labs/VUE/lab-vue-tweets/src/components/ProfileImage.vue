@@ -1,21 +1,12 @@
 <template>
-  <img :src="userImage" :alt="text" />
+  <img :src="imageProp.image" class="profile" alt="profile" />
 </template>
-<!-- JS HERE -->
+
 <script setup>
-defineProps({
-  userImage: {
-    type: String,
-    required: true,
-  },
-  text: {
-    type: String,
-  },
+import { ref, reactive } from "vue";
+const imageProp = defineProps({
+  image: String,
 });
 </script>
-<!-- CSS HERE -->
-<style scoped>
-img {
-  width: 20%;
-}
-</style>
+
+<style scoped></style>

@@ -16,51 +16,44 @@ function updateSubtotal(product) {
   // Step 5: we change the innerText through DOM manipulation and then we return the number that we got from our multiplication
   subtotalElement.innerText = subtotalPrice;
   return subtotalPrice;
-  
 }
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
- /*  const singleProduct = document.querySelector(".product");
+  /*  const singleProduct = document.querySelector(".product");
   updateSubtotal(singleProduct); */
   // end of test
 
   // ITERATION 2
   let arrayProduct = document.getElementsByClassName("product");
-  for(i= 0; i<= arrayProduct.length; i++){
-    updateSubtotal(arrayProduct[i])
+  for (i = 0; i <= arrayProduct.length; i++) {
+    updateSubtotal(arrayProduct[i]);
   }
   // ITERATION 3
   let arraySubtotal = document.getElementsByClassName("subtotal");
-  
-   for(i= 0; i<= arraySubtotal.length; i++){
-    sum = parseFloat(arraySubtotal[i].innerText)
+
+  for (i = 0; i <= arraySubtotal.length; i++) {
+    sum = parseFloat(arraySubtotal[i].innerText);
   }
-  
+
   /* let sum = arraySubtotal.reduce((numOne,numTwo) => 
     numOne + numTwo, 0
   ); */
-  let totalNumber = document.getElementById("total-value span")
-  totalNumber.innerText = `${sum}`; 
-  
-  
-    
+  let totalNumber = document.getElementById("total-value span");
+  totalNumber.innerText = `${sum}`;
+
   // ITERATION 3
-  
-  document.querySelector("#total-value span").innerHTML = `${total}`; 
+
+  document.querySelector("#total-value span").innerHTML = `${total}`;
 }
-
-
-
 
 // ITERATION 4
 
 function removeProduct(event) {
-
   const target = event.currentTarget;
   // Verifciar que esta conectada la funcion post creacion del eventListener dentro del Window object
-  console.log('The target in remove is:', target);
+  console.log("The target in remove is:", target);
 
   // Usamos el parentNode para apuntar al ABUELO de row que contiene el evento especifico que estamos apuntando casualmente el abuelo de este evento es el elemento TR con la clase product.
   const row = target.parentNode.parentNode;
@@ -77,19 +70,18 @@ function removeProduct(event) {
   calculateAll();
 }
 
-
 // ITERATION 5
 
 function createProduct() {
-// Parte 1
-const createRow = document.querySelector('.create-product');
-let newProdNameInput = createRow.querySelector('input');
-let newProdNameValue = newProdNameInput.value;
-let newProdPriceInput = createRow.querySelector("input[type='number']");
-let newProdPriceValue = Number(newProdPriceInput.valueAsNumber).toFixed(2);
+  // Parte 1
+  const createRow = document.querySelector(".create-product");
+  let newProdNameInput = createRow.querySelector("input");
+  let newProdNameValue = newProdNameInput.value;
+  let newProdPriceInput = createRow.querySelector("input[type='number']");
+  let newProdPriceValue = Number(newProdPriceInput.valueAsNumber).toFixed(2);
 
-// Parte 2
-/* const newTableRow = document.createElement('tr');
+  // Parte 2
+  /* const newTableRow = document.createElement('tr');
 newTableRow.className = 'product';
 newTableRow.innerHTML = `
       <td class="name">
@@ -105,35 +97,35 @@ newTableRow.innerHTML = `
     </td>
 `; */
 
-// Parte 3
-// Agarrr el padre de los rows mediante un poco de DOM
-const parent = document.querySelector('#cart tbody');
+  // Parte 3
+  // Agarrr el padre de los rows mediante un poco de DOM
+  const parent = document.querySelector("#cart tbody");
 
-// Adjuntar la variable newTableRow dentro de parent :)
-parent.appendChild(newTableRow);
+  // Adjuntar la variable newTableRow dentro de parent :)
+  parent.appendChild(newTableRow);
 
-// Recibir logica de botones
-const removeBtn = newTableRow.querySelector('.btn-remove');
-removeBtn.addEventListener('click', removeProduct);
+  // Recibir logica de botones
+  const removeBtn = newTableRow.querySelector(".btn-remove");
+  removeBtn.addEventListener("click", removeProduct);
 
-// Limpiar los inputs una vez el usaurio haya creado un producto
-newProdNameInput.value = '';
-newProdPriceInput.value = 0;
+  // Limpiar los inputs una vez el usaurio haya creado un producto
+  newProdNameInput.value = "";
+  newProdPriceInput.value = 0;
 }
 
-window.addEventListener('load', () => {
-const calculatePricesBtn = document.getElementById('calculate');
-calculatePricesBtn.addEventListener('click', calculateAll);
+window.addEventListener("load", () => {
+  const calculatePricesBtn = document.getElementById("calculate");
+  calculatePricesBtn.addEventListener("click", calculateAll);
 
-// DOM para borrar productos
-const removeBtns = document.querySelectorAll('.btn-remove');
-for (let removeBtn of removeBtns) {
-  removeBtn.addEventListener('click', removeProduct);
-}
+  // DOM para borrar productos
+  const removeBtns = document.querySelectorAll(".btn-remove");
+  for (let removeBtn of removeBtns) {
+    removeBtn.addEventListener("click", removeProduct);
+  }
 
-// DOM para crear productos
-const createBtn = document.querySelector('#create');
-if (createBtn) {
-  createBtn.addEventListener('click', createProduct);
-}
+  // DOM para crear productos
+  const createBtn = document.querySelector("#create");
+  if (createBtn) {
+    createBtn.addEventListener("click", createProduct);
+  }
 });

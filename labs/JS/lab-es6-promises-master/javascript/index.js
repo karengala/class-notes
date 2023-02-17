@@ -91,42 +91,41 @@ getInstruction(
 
 // Iteration 2 - using promises
 
-obtainInstruction('steak', 0)
-  .then( (step0) => {
-    document.querySelector("#steak").innerHTML += `<li>${step0}</li>` 
-    return obtainInstruction('steak', 1)
+obtainInstruction("steak", 0)
+  .then((step0) => {
+    document.querySelector("#steak").innerHTML += `<li>${step0}</li>`;
+    return obtainInstruction("steak", 1);
   })
-  .then( (step1) => {
-    document.querySelector("#steak").innerHTML += `<li>${step1}</li>`
-    return obtainInstruction('steak', 2)
+  .then((step1) => {
+    document.querySelector("#steak").innerHTML += `<li>${step1}</li>`;
+    return obtainInstruction("steak", 2);
   })
-  .then( (step3) => {
-    document.querySelector("#steak").innerHTML += `<li>${step3}</li>`
-    return obtainInstruction('steak', 3)
+  .then((step3) => {
+    document.querySelector("#steak").innerHTML += `<li>${step3}</li>`;
+    return obtainInstruction("steak", 3);
   })
-  .then( (step4) => {
-    document.querySelector("#steak").innerHTML += `<li>${step4}</li>`
-    return obtainInstruction('steak', 4)
+  .then((step4) => {
+    document.querySelector("#steak").innerHTML += `<li>${step4}</li>`;
+    return obtainInstruction("steak", 4);
   })
-  .then( (step5) => {
-    document.querySelector("#steak").innerHTML += `<li>${step5}</li>`
-    return obtainInstruction('steak', 5)
+  .then((step5) => {
+    document.querySelector("#steak").innerHTML += `<li>${step5}</li>`;
+    return obtainInstruction("steak", 5);
   })
-  .then( (step6) => {
-    document.querySelector("#steak").innerHTML += `<li>${step6}</li>`
-    return obtainInstruction('steak', 6)
+  .then((step6) => {
+    document.querySelector("#steak").innerHTML += `<li>${step6}</li>`;
+    return obtainInstruction("steak", 6);
   })
-  .then( (step7) => {
-    document.querySelector("#steak").innerHTML += `<li>${step7}</li>`
-    return obtainInstruction('steak', 7)
+  .then((step7) => {
+    document.querySelector("#steak").innerHTML += `<li>${step7}</li>`;
+    return obtainInstruction("steak", 7);
   })
-  .then( (step8) => {
-    document.querySelector("#steak").innerHTML += `<li>Steak is ready!</li>`
+  .then((step8) => {
+    document.querySelector("#steak").innerHTML += `<li>Steak is ready!</li>`;
   });
 
 // Iteration 3 using async/await
 async function makeBroccoli() {
-
   const prueba = await obtainInstruction("broccoli", 0);
   document.querySelector("#broccoli").innerHTML += `<li>${prueba}</li>`;
   // paso 2
@@ -147,8 +146,8 @@ async function makeBroccoli() {
   // paso 6
   const step6 = await obtainInstruction("broccoli", 6);
   document.querySelector("#broccoli").innerHTML += `<li>${step6}</li>`;
-   // Añadir texto despues del ultimo paso de el broccoli
-   document.querySelector(
+  // Añadir texto despues del ultimo paso de el broccoli
+  document.querySelector(
     "#broccoli"
   ).innerHTML += `<li>Broccoli is ready!</li>`;
   // Remove hidden attribute de la imagen del broccoli
@@ -156,12 +155,33 @@ async function makeBroccoli() {
 }
 makeBroccoli();
 
-
 // Bonus 1 - Removen hidden img
-function removenode(){
+function removenode() {
   const imgs = document.getElementsByTagName("img");
 }
 
 // Bonus 2 - Promise all
-// ...
 
+const paso0 = obtainInstruction("brusselsSprouts", 0);
+const paso1 = obtainInstruction("brusselsSprouts", 1);
+const paso2 = obtainInstruction("brusselsSprouts", 2);
+const paso3 = obtainInstruction("brusselsSprouts", 3);
+const paso4 = obtainInstruction("brusselsSprouts", 4);
+const paso5 = obtainInstruction("brusselsSprouts", 5);
+const paso6 = obtainInstruction("brusselsSprouts", 6);
+const paso7 = obtainInstruction("brusselsSprouts", 7);
+
+Promise.all([paso0, paso1, paso2, paso3, paso4, paso5, paso6, paso7])
+  .then((promises) => {
+    promises.forEach((instruction) => {
+      document.querySelector(
+        "#brusselsSprouts"
+      ).innerHTML += `<li>${instruction}</li>`;
+    });
+
+    document.querySelector(
+      "#brusselsSprouts"
+    ).innerHTML += `<li>Brussels sprouts are ready!</li>`;
+    document.querySelector("#brusselsSproutsImg").hidden = false;
+  })
+  .catch((error) => console.log(error));
